@@ -1,10 +1,13 @@
 package app;
-/*
+/** 
 * Membros:
 * Carlos H
 * Catarina M
 * Rebeka R
 * Vitor M
+*
+* 
+* Classe principal, onde vai rodar tudo.
 */
 
 public class App {
