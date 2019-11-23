@@ -29,12 +29,9 @@ public static Escritor escritor = new Escritor();
 
     public static void main(String[] args) throws Exception {
         tela.instanciarMapa(mapa);
-        System.out.println("Teste de escrita Hellur!");
         tela.criarHud(mapa);
         mapa = tela.adicionarEmbarcacoes(escritor.lerTxtMapa(),mapa);
         tela.lerMapaEscrever(mapa);
-        //listaDeInformação = escritor.lerTxtMapa();
-
     }
 
 

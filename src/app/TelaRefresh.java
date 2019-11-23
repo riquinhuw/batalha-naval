@@ -30,15 +30,9 @@ public class TelaRefresh {
 
     public EmbacacaoVO[][] adicionarEmbarcacoes(List<InformacaoVO> listaDeInformacao, EmbacacaoVO[][] mapa) {
         try {
-            int i = 0;
             while (listaDeInformacao.isEmpty() != true) {// pegando as informacoes da lista e setando no mapa
                 InformacaoVO info = new InformacaoVO();
                 info = listaDeInformacao.get(0);
-                System.out.println(info.letra);
-                System.out.println(info.linha);
-                System.out.println(info.coluna);
-                System.out.println("olha o cont:" + i);
-                i++;
                 mapa[info.linha][info.coluna].agua = false;
                 mapa[info.linha][info.coluna].letra = info.letra;
                 mapa[info.linha][info.coluna].posVetorVida = info.indice_embarcacao;
@@ -47,7 +41,6 @@ public class TelaRefresh {
 
         } catch (Exception e) {
             // TODO: handle exception
-            System.out.println("algum erro");
             System.out.println(e);
         }
 
@@ -94,7 +87,7 @@ public class TelaRefresh {
                                 System.out.print(ANSI_RED_BACKGROUND + ANSI_BLACK + matriz[i][j].letra + ANSI_RESET);
                             }
                         } else {
-                            // se não foi atingido ainda, vai ficar escondido.
+                            // se não foi atingido ainda, vai ficar escondido, tem que trocar matriz letra por " " para esconder os barcos
                             if (j == 10) {
                                 System.out.println(ANSI_BLUE_BACKGROUND + ANSI_BLACK + matriz[i][j].letra + ANSI_RESET);
                             } else {

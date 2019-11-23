@@ -19,9 +19,7 @@ public class Escritor {
                 juntarTexto = juntarTexto+ arquivo.next();
                 juntarTexto = juntarTexto+ arquivo.next();
                 juntarTexto = juntarTexto+ arquivo.next();
-                //System.out.println(juntarTexto); // ta esrevendo de boa
                 InformacaoVO info = new InformacaoVO(juntarTexto);
-                //System.out.println(info.linha);// erro na hora de criar informacao
                 listaDeInformação.add(info);
             }
         } catch (Exception e) {

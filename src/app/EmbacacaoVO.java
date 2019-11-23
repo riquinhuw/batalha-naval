@@ -5,11 +5,11 @@ package app;
  */
 public class EmbacacaoVO {
 
-    int posVetorVida; // que parte ele é do barco, no caso do Porta aviões, de 1 a 5
+    int posVetorVida=11; // a posicao dele no vetor de vida, default 11 para a água não interferir
     boolean atingido; // se essa parte foi atingido.
     boolean agua =true; // se todo o barco foi destruido.
     boolean hud;
-    String letra=" ";
+    String letra=" ";// deixar assim para printar o vazio
     // criar verificador de quando todas as partes são atingidas.
 
     public static void main(String[] args) {
