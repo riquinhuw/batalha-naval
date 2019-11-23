@@ -1,6 +1,7 @@
 package app;
 
 import java.io.Console;
+import java.util.List;
 
 /**
  * TelaRefresh
@@ -28,6 +29,12 @@ public class TelaRefresh {
     public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
+
+    public void adicionarEmbarcacoes(List<InformacaoVO> listaDeInformacao){
+
+
+
+    }
 
     public void lerMapaEscrever(EmbacacaoVO[][] matriz){
         //inicialmente tem que começar criando o hud.
