@@ -13,48 +13,59 @@ import java.util.Scanner;
  */
 public class Acoes {
 
-    public static List<EscolhaVO> receberAcao(EmbacacaoVO[][] mapa, List<EscolhaVO> listaDeTiros, int[] vetorDeVidas) {
+    public static DadosVO receberAcao(DadosVO dadosAtuais) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Almirante, escolha a próxima coordenada para atirarmos!");// Colocar a Waifu falando aqui
         String digitado = scan.nextLine();
         EscolhaVO escolha = new EscolhaVO(digitado.substring(0, 1), digitado.substring(1, 2));
         Util util = new Util();
         escolha.linha = String.valueOf(util.TranscreverHorizontal(escolha.linha));
-        listaDeTiros = verificarOAlvo(mapa, escolha, listaDeTiros, vetorDeVidas);// vai verificar se a localização já
+        dadosAtuais = verificarOAlvo(escolha, dadosAtuais);// vai verificar se a localização já
                                                                                  // foi usada
-        return listaDeTiros;
+        return dadosAtuais;
     }
 
-    public static List<EscolhaVO> verificarOAlvo(EmbacacaoVO[][] mapa, EscolhaVO escolha, List<EscolhaVO> listaDeTiros,
-            int[] vetorDeVidas) {// no outpu no App, se o input for diferente do mais novo da lista é pq ele não
+    public static DadosVO verificarOAlvo(EscolhaVO escolha,DadosVO dadosAtuais) {// no outpu no App, se o input for diferente do mais novo da lista é pq ele não
                                  // foi aceito
         boolean taNaLista = true;
-        for (int i = 0; i < listaDeTiros.size(); i++) {
-            if (listaDeTiros.get(i).coluna == escolha.coluna && listaDeTiros.get(i).linha == escolha.linha) {
-                return listaDeTiros;// se tiver na lista ele já retorna a lista sem mudar nada.
+        for (int i = 0; i < dadosAtuais.listaDeTiros.size(); i++) {
+            if (dadosAtuais.listaDeTiros.get(i).coluna == escolha.coluna && dadosAtuais.listaDeTiros.get(i).linha == escolha.linha) {
+                return dadosAtuais;// se tiver na lista ele já retorna a lista sem mudar nada.
             } else {// se não tiver ele deixa false
                 taNaLista = false;
             }
 
         }
         if (!taNaLista) {// se ele não estiver na lista de tiro, é pq está valido para atirar
-            atirar(mapa, escolha, vetorDeVidas);
-            listaDeTiros.add(escolha);
+            atirar(escolha, dadosAtuais);
+            dadosAtuais.listaDeTiros.add(escolha);
         }
-        return listaDeTiros;
+        return dadosAtuais;// arrumar o return para DadosVO dadosAtuais.
     }
 
-    public static void atirar(EmbacacaoVO[][] mapa, EscolhaVO escolha, int[] vetorDeVidas) {
+    public static void atirar(EscolhaVO escolha,DadosVO dadosAtuais) {
         int linha = Integer.parseInt(escolha.linha);
         int coluna = Integer.parseInt(escolha.coluna);
 
-        if (!mapa[linha][coluna].agua && !mapa[linha][coluna].hud) {// se não for água e hud ele faz algo, se não já
-                                                                    // pula
-            if (Integer.parseInt(escolha.linha) == linha && Integer.parseInt(escolha.coluna) == coluna) {
-                mapa[linha][coluna].atingido = true;
-                vetorDeVidas[mapa[linha][coluna].posVetorVida] = vetorDeVidas[mapa[linha][coluna].posVetorVida] - 1;
+        if (linha>0&&linha<11&&coluna>0&&coluna<11) {// se for coordenada valida ele atira
+            if (dadosAtuais.mapa[linha][coluna].agua) {
+                dadosAtuais.mapa[linha][coluna].letra="X";
+                System.out.println("OH não, foi no mar");
             }
 
-        }
+            if(dadosAtuais.mapa[linha][coluna].hud){
+                System.out.println("Almirante, essa coordenada não faz parte do jogo");
+            }
+    
+            if (!dadosAtuais.mapa[linha][coluna].agua && !dadosAtuais.mapa[linha][coluna].hud) {// se não for água e hud ele faz algo, se não já
+                                                                        // pula
+                if (Integer.parseInt(escolha.linha) == linha && Integer.parseInt(escolha.coluna) == coluna) {
+                    dadosAtuais.mapa[linha][coluna].atingido = true;
+                    dadosAtuais.vetorDeVidas[dadosAtuais.mapa[linha][coluna].posVetorVida] = dadosAtuais.vetorDeVidas[dadosAtuais.mapa[linha][coluna].posVetorVida] - 1;
+                }
+    
+            }            
+        }else{System.out.println("Coordenadas invalidas! por favor tente novamente");}//se não for valido ele nao faz nada
+
     }
 }
