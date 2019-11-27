@@ -11,6 +11,11 @@ public class EscolhaVO {
     String coluna;
 
     EscolhaVO(){} //construtor vazio
+    EscolhaVO(String linha,String coluna){
+        
+        this.linha=linha;
+        this.coluna=coluna;
+    }
     
 
 }

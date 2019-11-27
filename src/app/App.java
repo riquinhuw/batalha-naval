@@ -25,6 +25,7 @@ public static EmbacacaoVO[][] mapa = new EmbacacaoVO[11][11];
 public static int vetorDeVidas[]= new int[10];
 public static TelaRefresh tela = new TelaRefresh();
 public static Escritor escritor = new Escritor();
+public static List<EscolhaVO> listaDeTiros = new ArrayList<EscolhaVO>();
 //public static List<InformacaoVO> listaDeInformação = new ArrayList<InformacaoVO>();
 
     public static void main(String[] args) throws Exception {
