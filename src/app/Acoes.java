@@ -6,7 +6,8 @@ package app;
  */
 public class Acoes {
 
-    public static void main(String[] args) {
-        
+    public static void receberAcao(){
+        System.out.println("Almirante, escolha a próxima coordenada para atirarmos!");
+
     }
 }

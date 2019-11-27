@@ -112,6 +112,8 @@ public class TelaRefresh {
 
     }
 
+
+
     public void criarHud(EmbacacaoVO[][] matriz) {
         // Coluna inicial
         matriz[1][0].hud = true;
