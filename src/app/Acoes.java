@@ -20,26 +20,32 @@ public class Acoes {
         EscolhaVO escolha = new EscolhaVO(digitado.substring(0, 1), digitado.substring(1, 2));
         Util util = new Util();
         escolha.linha = String.valueOf(util.TranscreverHorizontal(escolha.linha));
+        //System.out.println("digitou:"+escolha.coluna+" e tb "+escolha.linha);
         dadosAtuais = verificarOAlvo(escolha, dadosAtuais);// vai verificar se a localização já
                                                                                  // foi usada
         return dadosAtuais;
     }
 
-    public static DadosVO verificarOAlvo(EscolhaVO escolha,DadosVO dadosAtuais) {// no outpu no App, se o input for diferente do mais novo da lista é pq ele não
-                                 // foi aceito
-        boolean taNaLista = true;
+    public static DadosVO verificarOAlvo(EscolhaVO escolha,DadosVO dadosAtuais) {// no outpu no App, se o input for diferente do mais novo da lista é pq ele não foi aceito
+        //System.out.println("ENTROU EM VERIFICAR ALVO");
+        boolean taNaLista = false;
         for (int i = 0; i < dadosAtuais.listaDeTiros.size(); i++) {
             if (dadosAtuais.listaDeTiros.get(i).coluna == escolha.coluna && dadosAtuais.listaDeTiros.get(i).linha == escolha.linha) {
+                System.out.println("ta na lista de tiro");
+                taNaLista=true;
                 return dadosAtuais;// se tiver na lista ele já retorna a lista sem mudar nada.
             } else {// se não tiver ele deixa false
-                taNaLista = false;
+                //taNaLista = false;
+                System.out.println("ta nao");
             }
 
         }
         if (!taNaLista) {// se ele não estiver na lista de tiro, é pq está valido para atirar
             atirar(escolha, dadosAtuais);
             dadosAtuais.listaDeTiros.add(escolha);
+            System.out.println("Nao ta e atirou");
         }
+        System.out.println("fim");
         return dadosAtuais;// arrumar o return para DadosVO dadosAtuais.
     }
 
