@@ -57,6 +57,9 @@ public static DadosVO dadosAtuais = new DadosVO();
             }
         }
         System.out.println("YOU WIN ALMIRANTE KUN");// o certo seria garantir que ele só roda essa linha, se ele ganhar mesmo
+        if (!faltaMatar) {// se o jogo acabou mesmo, ele vai dar o output
+            
+        }
     }
 
     public static DadosVO gameplay(){

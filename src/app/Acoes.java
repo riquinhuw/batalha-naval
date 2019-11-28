@@ -12,6 +12,7 @@ import java.util.Scanner;
  * vida
  */
 public class Acoes {
+    public static Waifu waifu = new Waifu();
 
     public static DadosVO receberAcao(DadosVO dadosAtuais) {
         Scanner scan = new Scanner(System.in);
@@ -36,16 +37,13 @@ public class Acoes {
                 return dadosAtuais;// se tiver na lista ele já retorna a lista sem mudar nada.
             } else {// se não tiver ele deixa false
                 //taNaLista = false;
-                System.out.println("ta nao");
             }
 
         }
         if (!taNaLista) {// se ele não estiver na lista de tiro, é pq está valido para atirar
             atirar(escolha, dadosAtuais);
             dadosAtuais.listaDeTiros.add(escolha);
-            System.out.println("Nao ta e atirou");
         }
-        System.out.println("fim");
         return dadosAtuais;// arrumar o return para DadosVO dadosAtuais.
     }
 
@@ -56,7 +54,7 @@ public class Acoes {
         if (linha>0&&linha<11&&coluna>0&&coluna<11) {// se for coordenada valida ele atira
             if (dadosAtuais.mapa[linha][coluna].agua) {
                 dadosAtuais.mapa[linha][coluna].letra="X";
-                System.out.println("OH não, foi no mar");
+                waifu.falarAcertouAgua();
             }
 
             if(dadosAtuais.mapa[linha][coluna].hud){
@@ -68,6 +66,14 @@ public class Acoes {
                 if (Integer.parseInt(escolha.linha) == linha && Integer.parseInt(escolha.coluna) == coluna) {
                     dadosAtuais.mapa[linha][coluna].atingido = true;
                     dadosAtuais.vetorDeVidas[dadosAtuais.mapa[linha][coluna].posVetorVida] = dadosAtuais.vetorDeVidas[dadosAtuais.mapa[linha][coluna].posVetorVida] - 1;
+                    switch (dadosAtuais.mapa[linha][coluna].letra) {
+                        case "D":
+                            waifu.falarAcertouDD();
+                            break;
+                    
+                        default:
+                            break;
+                    }
                 }
     
             }            
