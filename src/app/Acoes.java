@@ -17,7 +17,7 @@ public class Acoes {
         Scanner scan = new Scanner(System.in);
         System.out.println("Almirante, escolha a próxima coordenada para atirarmos!");// Colocar a Waifu falando aqui
         String digitado = scan.nextLine();
-        EscolhaVO escolha = new EscolhaVO(digitado.substring(0, 1), digitado.substring(1, 2));
+        EscolhaVO escolha = new EscolhaVO(digitado.substring(0, 1), digitado.substring(1));
         Util util = new Util();
         escolha.linha = String.valueOf(util.TranscreverHorizontal(escolha.linha));
         //System.out.println("digitou:"+escolha.coluna+" e tb "+escolha.linha);

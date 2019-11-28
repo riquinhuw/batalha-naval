@@ -22,7 +22,7 @@ import java.util.List;
 
 public class App {
 public static EmbacacaoVO[][] mapa = new EmbacacaoVO[11][11];
-public static int vetorDeVidas[]= new int[10];
+public static int vetorDeVidas[]= new int[11];
 public static TelaRefresh tela = new TelaRefresh();
 public static Escritor escritor = new Escritor();
 public static List<EscolhaVO> listaDeTiros = new ArrayList<EscolhaVO>();
@@ -34,19 +34,38 @@ public static DadosVO dadosAtuais = new DadosVO();
         boolean faltaMatar=true;
         tela.instanciarMapa(mapa);
         tela.criarHud(mapa);
-        mapa = tela.adicionarEmbarcacoes(escritor.lerTxtMapa(),mapa);
+        dadosAtuais.mapa=mapa;
+        dadosAtuais.vetorDeVidas=vetorDeVidas;
+        dadosAtuais = tela.adicionarEmbarcacoes(escritor.lerTxtMapa(),dadosAtuais);
+        mapa = dadosAtuais.mapa;
+        vetorDeVidas=dadosAtuais.vetorDeVidas;
         while (faltaMatar) {
             gameplay();
+            listaDeTiros= dadosAtuais.listaDeTiros;
+            mapa = dadosAtuais.mapa; // tem 2 locais que atualizam o mapa, ver se vai dar conflito
+            vetorDeVidas = dadosAtuais.vetorDeVidas;
+            int verificarVetorDeVidas=0;
+            for (int i = 0; i < vetorDeVidas.length; i++) {
+                if (vetorDeVidas[i] != 0) {
+                    System.out.println(vetorDeVidas[i]);
+                    verificarVetorDeVidas++; // se tiver algum vetor com vida ele vai dar ++
+                }
+            }
+
+            if (verificarVetorDeVidas==0) {
+                faltaMatar= false;
+            }
         }
+        System.out.println("YOU WIN ALMIRANTE KUN");// o certo seria garantir que ele só roda essa linha, se ele ganhar mesmo
     }
 
-    public static void gameplay(){
+    public static DadosVO gameplay(){
         tela.lerMapaEscrever(mapa);
         dadosAtuais.listaDeTiros=listaDeTiros;
         dadosAtuais.mapa=mapa;
         dadosAtuais.vetorDeVidas = vetorDeVidas;
-        acoes.receberAcao(dadosAtuais);
-
+        dadosAtuais = acoes.receberAcao(dadosAtuais);
+        return dadosAtuais;
     }
 
 

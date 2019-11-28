@@ -28,15 +28,17 @@ public class TelaRefresh {
     public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
-    public EmbacacaoVO[][] adicionarEmbarcacoes(List<InformacaoVO> listaDeInformacao, EmbacacaoVO[][] mapa) {
+    public DadosVO adicionarEmbarcacoes(List<InformacaoVO> listaDeInformacao, DadosVO dadosAtuais) {
         try {
             while (listaDeInformacao.isEmpty() != true) {// pegando as informacoes da lista e setando no mapa
                 InformacaoVO info = new InformacaoVO();
                 info = listaDeInformacao.get(0);
-                mapa[info.linha][info.coluna].agua = false;
-                mapa[info.linha][info.coluna].letra = info.letra;
-                mapa[info.linha][info.coluna].posVetorVida = info.indice_embarcacao;
+                dadosAtuais.mapa[info.linha][info.coluna].agua = false;
+                dadosAtuais.mapa[info.linha][info.coluna].letra = info.letra;
+                dadosAtuais.mapa[info.linha][info.coluna].posVetorVida = info.indice_embarcacao; // para setar onde a vida ele ficará no vetor de vidac2
+                dadosAtuais.vetorDeVidas[dadosAtuais.mapa[info.linha][info.coluna].posVetorVida]++; // para setar +1 na vida do barco
                 listaDeInformacao.remove(0);
+                
             }
 
         } catch (Exception e) {
@@ -44,7 +46,7 @@ public class TelaRefresh {
             System.out.println(e);
         }
 
-        return mapa;
+        return dadosAtuais;
     }
 
     public void lerMapaEscrever(EmbacacaoVO[][] matriz) {
