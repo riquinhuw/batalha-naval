@@ -35,12 +35,41 @@ public class Escritor {
 
     public void criarTxtJogadas(List<EscolhaVO> jogadaList,EmbacacaoVO[][] mapa) {
         PrintWriter arquivo = null;
+        int coluna=0;
+        int linha =0;
         try {
             FileWriter out = new FileWriter("relatorioDeGuerra.txt");
             arquivo = new PrintWriter(out);
             arquivo.println("Almirante, aqui está o relatorio da nossa batalha:\n\n");
             for (int i = 0; i < jogadaList.size(); i++) {
-                arquivo.println("Nº "+(i+1)+" - "+"Linha:"+util.DesTranscreverHorizontal(jogadaList.get(i).linha) +" Coluna:"+jogadaList.get(i).coluna);
+                coluna = Integer.parseInt(jogadaList.get(i).coluna);
+                linha = Integer.parseInt(jogadaList.get(i).linha);
+                if (mapa[linha][coluna].agua==true){// se for água
+                    arquivo.println("Nº "+(i+1)+" - "+"Linha:"+util.DesTranscreverHorizontal(jogadaList.get(i).linha) +" Coluna:"+jogadaList.get(i).coluna+" - Acertou à água");
+                } else {
+                    if (mapa[linha][coluna].hud) {// se for Hud
+                        arquivo.println("Nº "+(i+1)+" - "+"Linha:"+util.DesTranscreverHorizontal(jogadaList.get(i).linha) +" Coluna:"+jogadaList.get(i).coluna+" - Atirou no HUD");
+                    } else {
+                        switch (mapa[linha][coluna].letra) {// verifica o tipo de embarcação que é
+                            case "S":
+                            arquivo.println("Nº "+(i+1)+" - "+"Linha:"+util.DesTranscreverHorizontal(jogadaList.get(i).linha) +" Coluna:"+jogadaList.get(i).coluna+" - Acertou um Submarnino");
+                                break;
+                            case "D":
+                            arquivo.println("Nº "+(i+1)+" - "+"Linha:"+util.DesTranscreverHorizontal(jogadaList.get(i).linha) +" Coluna:"+jogadaList.get(i).coluna+" - Acertou um Destroyer");
+                                break;
+                            case "C":
+                            arquivo.println("Nº "+(i+1)+" - "+"Linha:"+util.DesTranscreverHorizontal(jogadaList.get(i).linha) +" Coluna:"+jogadaList.get(i).coluna+" - Acertou um Cruzador");
+                                break;
+                            case "P":
+                            arquivo.println("Nº "+(i+1)+" - "+"Linha:"+util.DesTranscreverHorizontal(jogadaList.get(i).linha) +" Coluna:"+jogadaList.get(i).coluna+" - Acertou um Porta-Avião");
+                                break;
+                            default:
+                                break;
+                        }
+                    }  
+                }
+                
+                // fazer as contas de % aqui
             }
         } catch (Exception e) {
             System.out.println(e);

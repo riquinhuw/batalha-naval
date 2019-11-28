@@ -47,7 +47,7 @@ public class Util {
 
     public String DesTranscreverHorizontal(String letra){
         // recebe letras deveolve o numero
-        switch (letra) {// existe uma forma melhor, usando apenas char para ver qual é o seu numero, mas né é Java.
+        switch (Integer.parseInt(letra)) {// existe uma forma melhor, usando apenas char para ver qual é o seu numero, mas né é Java.
             case 1:
                 return "A";
 
@@ -79,7 +79,7 @@ public class Util {
                 return "J";
 
           default:
-            return 404;// para falar que não está no tabuleiros
+            return "404";// para falar que não está no tabuleiros
         }
     }
 }

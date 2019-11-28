@@ -34,7 +34,7 @@ public class Acoes {
             if (dadosAtuais.listaDeTiros.get(i).coluna == escolha.coluna && dadosAtuais.listaDeTiros.get(i).linha == escolha.linha) {
                 System.out.println("ta na lista de tiro");
                 taNaLista=true;
-                return dadosAtuais;// se tiver na lista ele já retorna a lista sem mudar nada.
+                //return dadosAtuais;// se tiver na lista ele já retorna a lista sem mudar nada.
             } else {// se não tiver ele deixa false
                 //taNaLista = false;
             }
@@ -44,7 +44,7 @@ public class Acoes {
             atirar(escolha, dadosAtuais);
             dadosAtuais.listaDeTiros.add(escolha);
         }
-        return dadosAtuais;// arrumar o return para DadosVO dadosAtuais.
+        return dadosAtuais;
     }
 
     public static void atirar(EscolhaVO escolha,DadosVO dadosAtuais) {
@@ -65,7 +65,7 @@ public class Acoes {
                                                                         // pula
                 if (Integer.parseInt(escolha.linha) == linha && Integer.parseInt(escolha.coluna) == coluna) {
                     dadosAtuais.mapa[linha][coluna].atingido = true;
-                    dadosAtuais.vetorDeVidas[dadosAtuais.mapa[linha][coluna].posVetorVida] = dadosAtuais.vetorDeVidas[dadosAtuais.mapa[linha][coluna].posVetorVida] - 1;
+                    dadosAtuais.vetorDeVidas[dadosAtuais.mapa[linha][coluna].posVetorVida]--;
                     switch (dadosAtuais.mapa[linha][coluna].letra) {
                         case "D":
                             waifu.falarAcertouDD();
