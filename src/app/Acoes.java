@@ -63,18 +63,25 @@ public class Acoes {
     
             if (!dadosAtuais.mapa[linha][coluna].agua && !dadosAtuais.mapa[linha][coluna].hud) {// se não for água e hud ele faz algo, se não já
                                                                         // pula
-                if (Integer.parseInt(escolha.linha) == linha && Integer.parseInt(escolha.coluna) == coluna) {
-                    dadosAtuais.mapa[linha][coluna].atingido = true;
-                    dadosAtuais.vetorDeVidas[dadosAtuais.mapa[linha][coluna].posVetorVida]--;
-                    switch (dadosAtuais.mapa[linha][coluna].letra) {
-                        case "D":
-                            waifu.falarAcertouDD();
-                            break;
-                    
-                        default:
-                            break;
+                if (dadosAtuais.vetorDeVidas[dadosAtuais.mapa[linha][coluna].posVetorVida]>0 && dadosAtuais.mapa[linha][coluna].atingido==false ) {//SE o barco tiver "vida" ele atira
+                // E TB se o local não for atingido já
+                    if (Integer.parseInt(escolha.linha) == linha && Integer.parseInt(escolha.coluna) == coluna) {
+                        dadosAtuais.mapa[linha][coluna].atingido = true;
+                        dadosAtuais.vetorDeVidas[dadosAtuais.mapa[linha][coluna].posVetorVida]--;
+                        switch (dadosAtuais.mapa[linha][coluna].letra) {
+                            case "D":
+                                waifu.falarAcertouDD();
+                                break;
+                        
+                            default:
+                                break;
+                        }
                     }
+                }else{
+                    //fala kawaii aqui
+                    System.out.println("Você Já atirou aqui Almirante");
                 }
+                
     
             }            
         }else{System.out.println("Coordenadas invalidas! por favor tente novamente");}//se não for valido ele nao faz nada

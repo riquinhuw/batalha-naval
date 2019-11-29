@@ -37,19 +37,29 @@ public class Escritor {
         PrintWriter arquivo = null;
         int coluna=0;
         int linha =0;
+        double totalDeTiros=0;
+        double tirosNaAgua=0;
+        double tirosAcertados=0;
+        int tirosInvalidos=0;//não implementado, talvez saia no 2.0 do jogo
+        int tirosRepetidos=0;// não implementando tb, quem sabe algum dia.
+
         try {
             FileWriter out = new FileWriter("relatorioDeGuerra.txt");
             arquivo = new PrintWriter(out);
             arquivo.println("Almirante, aqui está o relatorio da nossa batalha:\n\n");
+            totalDeTiros= jogadaList.size();//salvar o total de tiros
             for (int i = 0; i < jogadaList.size(); i++) {
                 coluna = Integer.parseInt(jogadaList.get(i).coluna);
                 linha = Integer.parseInt(jogadaList.get(i).linha);
                 if (mapa[linha][coluna].agua==true){// se for água
                     arquivo.println("Nº "+(i+1)+" - "+"Linha:"+util.DesTranscreverHorizontal(jogadaList.get(i).linha) +" Coluna:"+jogadaList.get(i).coluna+" - Acertou à água");
+                    tirosNaAgua++;
                 } else {
                     if (mapa[linha][coluna].hud) {// se for Hud
                         arquivo.println("Nº "+(i+1)+" - "+"Linha:"+util.DesTranscreverHorizontal(jogadaList.get(i).linha) +" Coluna:"+jogadaList.get(i).coluna+" - Atirou no HUD");
+                        tirosInvalidos++;
                     } else {
+                        tirosAcertados++;
                         switch (mapa[linha][coluna].letra) {// verifica o tipo de embarcação que é
                             case "S":
                             arquivo.println("Nº "+(i+1)+" - "+"Linha:"+util.DesTranscreverHorizontal(jogadaList.get(i).linha) +" Coluna:"+jogadaList.get(i).coluna+" - Acertou um Submarnino");
@@ -69,8 +79,14 @@ public class Escritor {
                     }  
                 }
                 
-                // fazer as contas de % aqui
+                
             }
+            // fazer as contas de % aqui
+            arquivo.println("Almirante, segue o relatorio de precisão:\n\n");// criar um if no fim para alterar fala
+            arquivo.println("Você fez "+totalDeTiros+" tiros no total");
+            arquivo.println("Onde "+((tirosAcertados/totalDeTiros)*100)+"% acertaram uma embarcação");
+            arquivo.println("Infelizmente "+((tirosNaAgua/totalDeTiros)*100)+"% foram errados");
+            //INSIRA AQUI A FALA COM O IF DEPENDENTO DA PORCENTAGEM 
         } catch (Exception e) {
             System.out.println(e);
         } finally {
