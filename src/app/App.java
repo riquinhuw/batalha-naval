@@ -3,6 +3,7 @@ package app;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /** 
 * Membros:
 * Carlos H
@@ -28,10 +29,12 @@ public static Escritor escritor = new Escritor();
 public static List<EscolhaVO> listaDeTiros = new ArrayList<EscolhaVO>();
 public static Acoes acoes = new Acoes();
 public static DadosVO dadosAtuais = new DadosVO();
+public static Util util = new Util();
 //public static List<InformacaoVO> listaDeInformação = new ArrayList<InformacaoVO>();
 
     public static void main(String[] args) throws Exception {
         boolean faltaMatar=true;
+        Waifu waifu = new Waifu();
         tela.instanciarMapa(mapa);
         tela.criarHud(mapa);
         dadosAtuais.mapa=mapa;
@@ -39,7 +42,13 @@ public static DadosVO dadosAtuais = new DadosVO();
         dadosAtuais = tela.adicionarEmbarcacoes(escritor.lerTxtMapa(),dadosAtuais);
         mapa = dadosAtuais.mapa;
         vetorDeVidas=dadosAtuais.vetorDeVidas;
+        waifu.intro();
+        waifu.falarBemVindo();
         while (faltaMatar) {
+            //System.out.print("\033[H\033[2J");  // limpa tela ta bugado
+            //System.out.flush(); //limpa tb
+            //System.out.print("\033\143");
+            
             gameplay();
             listaDeTiros= dadosAtuais.listaDeTiros;
             mapa = dadosAtuais.mapa; // tem 2 locais que atualizam o mapa, ver se vai dar conflito

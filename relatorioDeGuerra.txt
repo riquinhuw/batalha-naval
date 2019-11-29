@@ -6,29 +6,33 @@ Nº 2 - Linha:A Coluna:2 - Acertou um Porta-Avião
 Nº 3 - Linha:A Coluna:3 - Acertou um Porta-Avião
 Nº 4 - Linha:A Coluna:4 - Acertou um Porta-Avião
 Nº 5 - Linha:A Coluna:5 - Acertou um Porta-Avião
-Nº 6 - Linha:A Coluna:7 - Acertou à água
-Nº 7 - Linha:C Coluna:1 - Acertou um Cruzador
-Nº 8 - Linha:C Coluna:2 - Acertou um Cruzador
-Nº 9 - Linha:C Coluna:3 - Acertou um Cruzador
-Nº 10 - Linha:C Coluna:4 - Acertou um Cruzador
-Nº 11 - Linha:C Coluna:6 - Acertou um Destroyer
-Nº 12 - Linha:C Coluna:7 - Acertou um Destroyer
-Nº 13 - Linha:D Coluna:9 - Acertou um Destroyer
-Nº 14 - Linha:D Coluna:10 - Acertou um Destroyer
-Nº 15 - Linha:E Coluna:1 - Acertou um Cruzador
-Nº 16 - Linha:E Coluna:2 - Acertou um Cruzador
-Nº 17 - Linha:E Coluna:3 - Acertou um Cruzador
-Nº 18 - Linha:E Coluna:4 - Acertou um Cruzador
+Nº 6 - Linha:C Coluna:1 - Acertou um Cruzador
+Nº 7 - Linha:C Coluna:2 - Acertou um Cruzador
+Nº 8 - Linha:C Coluna:3 - Acertou um Cruzador
+Nº 9 - Linha:C Coluna:4 - Acertou um Cruzador
+Nº 10 - Linha:C Coluna:6 - Acertou um Destroyer
+Nº 11 - Linha:C Coluna:7 - Acertou um Destroyer
+Nº 12 - Linha:D Coluna:9 - Acertou um Destroyer
+Nº 13 - Linha:D Coluna:10 - Acertou um Destroyer
+Nº 14 - Linha:E Coluna:1 - Acertou um Cruzador
+Nº 15 - Linha:E Coluna:2 - Acertou um Cruzador
+Nº 16 - Linha:E Coluna:3 - Acertou um Cruzador
+Nº 17 - Linha:E Coluna:4 - Acertou um Cruzador
+Nº 18 - Linha:E Coluna:5 - Acertou à água
 Nº 19 - Linha:E Coluna:6 - Acertou um Destroyer
 Nº 20 - Linha:E Coluna:7 - Acertou um Destroyer
-Nº 21 - Linha:G Coluna:1 - Acertou um Submarnino
-Nº 22 - Linha:G Coluna:5 - Acertou um Submarnino
-Nº 23 - Linha:H Coluna:3 - Acertou um Submarnino
-Nº 24 - Linha:I Coluna:1 - Acertou um Submarnino
-Nº 25 - Linha:J Coluna:4 - Acertou um Submarnino
+Nº 21 - Linha:E Coluna:8 - Acertou à água
+Nº 22 - Linha:E Coluna:9 - Acertou à água
+Nº 23 - Linha:G Coluna:1 - Acertou um Submarnino
+Nº 24 - Linha:G Coluna:4 - Acertou à água
+Nº 25 - Linha:G Coluna:5 - Acertou um Submarnino
+Nº 26 - Linha:H Coluna:1 - Acertou à água
+Nº 27 - Linha:H Coluna:3 - Acertou um Submarnino
+Nº 28 - Linha:I Coluna:1 - Acertou um Submarnino
+Nº 29 - Linha:J Coluna:4 - Acertou um Submarnino
 Almirante, segue o relatorio de precisão:
 
 
-Você fez 25.0 tiros no total
-Onde 96.0% acertaram uma embarcação
-Infelizmente 4.0% foram errados
+Você fez 29.0 tiros no total
+Onde 82.75862068965517% acertaram uma embarcação
+Infelizmente 17.24137931034483% foram errados

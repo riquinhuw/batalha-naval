@@ -1,9 +1,11 @@
 package app;
 
+import java.io.Console;
+import java.io.IOException;
+
 /**
- * Waifu1
- * Responsavel pelas falas para o jogador
- * Com metodos de escrita de fala, que pode variar
+ * Waifu1 Responsavel pelas falas para o jogador Com metodos de escrita de fala,
+ * que pode variar
  */
 public class Waifu {
 
@@ -39,20 +41,165 @@ public class Waifu {
         random = Math.round(random);
         System.out.println(random);
         if (random < 4) {
-            System.out.println(ANSI_CYAN + "Poxa Almirante, você acertou na água" + ANSI_RESET);
+            System.out.println(ANSI_CYAN + "I-19: Poxa Almirante, você acertou na água" + ANSI_RESET);
         } else {
             if (random < 7) {
-                System.out.println(ANSI_CYAN + "Vamos lá Almirante, você conseguie!" + ANSI_RESET);
+                System.out.println(ANSI_CYAN + "I-19: Vamos lá Almirante, você conseguie!" + ANSI_RESET);
             } else {
                 System.out.println(
-                        ANSI_CYAN + "Almirante seu bobo, você não está se esforçando o suficiente" + ANSI_RESET);
+                        ANSI_CYAN + "I-19: Almirante seu bobo, você não está se esforçando o suficiente" + ANSI_RESET);
             }
         }
     }
 
     public void falarAcertouDD() {
-        System.out.println(ANSI_CYAN + "EU PEGUEI VOCÊ!" + ANSI_RESET);
+        System.out.println(ANSI_CYAN + "I-19: EU PEGUEI VOCÊ!" + ANSI_RESET);
     }
+
+    public void falarAcertouPPPP() {
+        random = Math.random();
+        random *= 10;
+        random = Math.round(random);
+        System.out.println(random);
+        if (random < 5) {
+            System.out.println(ANSI_BLUE + "Yahagi: Boa Almirante" + ANSI_RESET);
+        } else {
+            System.out.println(ANSI_BLUE + "Yahagi: Vamos lá Almirante, você conseguie!" + ANSI_RESET);
+        }
+    }
+
+    public void falarAfundouPPPP() {
+        System.out.println(ANSI_BLUE + "Yahagi: NÃO VOU DEIXAR QUE MACHUQUEM YAMATO-SAMA!" + ANSI_RESET);
+    }// OBRIGADA ALMIRANTE GRAÇAS A VOCÊ YAMATO-SAMA ESTA MAIS SEGURA
+
+    public void falarAcertouSubmarino() {
+        random = Math.random();
+        random *= 10;
+        random = Math.round(random);
+        System.out.println(random);
+        if (random < 4) {
+            System.out.println(ANSI_GREEN + "Zuikako: Parem de se esconder e me enfrentem!" + ANSI_RESET);
+        } else {
+            if (random < 7) {
+                System.out
+                        .println(ANSI_GREEN + "Zuikako: Tenha cuidado Almirante, elas são muito espertas" + ANSI_RESET);
+            } else {
+                System.out.println(ANSI_GREEN + "Zuikako: SINTAM A IRA DO PORTA AVIOES ZUIKAKO!" + ANSI_RESET);
+            }
+        }
+    }
+
+    public void falarAcertouRepetido() {
+        System.out.println(
+                ANSI_GREEN + "Zuikako: Preste atenção Almirante, você já escolheu essa coordenada" + ANSI_RESET);
+    }
+
+    public void falarAcertouCCCC() {
+        random = Math.random();
+        random *= 10;
+        random = Math.round(random);
+        System.out.println(random);
+        if (random < 5) {
+            System.out.println(ANSI_YELLOW + "Hatsuzuki: Parabéns Almirante" + ANSI_RESET);
+        } else {
+            if (random < 7) {
+                System.out.println(
+                        ANSI_YELLOW + "Hatsuzuki: Almirante mantenha o foco não podemos parar agora" + ANSI_RESET);
+            } else {
+                System.out.println(ANSI_YELLOW + "Hatsuzuki: SINTAM A IRA DO PORTA AVIOES ZUIKAKO!" + ANSI_RESET);
+            }
+        }
+
+    }
+
+    public void falarBemVindo() {
+        System.out.println(
+                ANSI_YELLOW + "Hatsuzuki: Bem vindo Almirante, estamos esperando pelo seu comando" + ANSI_RESET);
+    }
+
+    public void falarAfundouDD() {
+        System.out.println(
+                ANSI_CYAN + "Almirante nos Conseguimos esse destroyer nao ira mais nos incomodar" + ANSI_RESET);
+    }
+
+    public void falarErrouDeMais() {
+        System.out.println(ANSI_CYAN + "I-19: Almirante você errou muito precisa se esforçar mais" + ANSI_RESET);
+    }
+
+    public void falarAcertouMuito() {
+        System.out.println(
+                ANSI_BLUE + "Yahagi: Parabéns Almirante voce foi muito bem, porem não deixe o sucesso subir a cabeça"
+                        + ANSI_RESET);
+    }
+
+    public void falarObrigadoPorJogar() {
+        System.out.println(ANSI_BLUE
+                + "Yahagi: Parabéns Almirante voce foi muito bem mas nao fique longe por muito tempo, não queremos que suas habilidades enferrugem"
+                + ANSI_RESET);
+
+    }
+
+    public void intro() {
+
+        String barra = "\\";
+        System.out.println(ANSI_GREEN
+                + "Zuikako: almirante nos detectamos uma frota de navios  inimigos \n perto das Filipinas e precisamos interceptar antes que eles cheguem a costa"
+                + ANSI_RESET);
+        System.out.println("pressione Enter para continuar:");
+        System.console().readLine();
+
+        System.out.println("   __|__ |___| |" + barra);
+        System.out.println("   |o__| |___| | " + barra);
+        System.out.println("   |___| |___| |o " + barra);
+        System.out.println("  _|___| |___| |__o" + barra);
+        System.out.println(" /..." + barra + "_____|___|____" + barra + "_/");
+        System.out.println(" " + barra + "   o * o * * o o  /");
+        System.out.println(ANSI_BLUE_BACKGROUND + "~~~~~~~~~~~~~~~~~~~~~~~~" + ANSI_RESET);
+
+        for (int i = 0; i < 13; i++) {
+            System.out.print("\033[H\033[2J");  // limpa tela
+            System.out.flush(); //limpa tb
+
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            System.out.println("   __|__ |___| |" + barra);
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            System.out.println("   |o__| |___| | " + barra);
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            System.out.println("   |___| |___| |o " + barra);
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            System.out.println("  _|___| |___| |__o" + barra);
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            System.out.println(" /..." + barra + "_____|___|____" + barra + "_/");
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            System.out.println(" " + barra + "   o * o * * o o  /");
+            for (int j = 0; j < i; j++) {
+                System.out.print(ANSI_BLUE_BACKGROUND + "~" + ANSI_RESET);
+            }
+            System.out.println(ANSI_BLUE_BACKGROUND + "~~~~~~~~~~~~~~~~~~~~~~~~" + ANSI_RESET);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            
+        }
+
+    }
+
+    
 
     public Waifu() {
     }

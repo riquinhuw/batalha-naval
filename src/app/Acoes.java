@@ -22,8 +22,19 @@ public class Acoes {
         Util util = new Util();
         escolha.linha = String.valueOf(util.TranscreverHorizontal(escolha.linha));
         //System.out.println("digitou:"+escolha.coluna+" e tb "+escolha.linha);
-        dadosAtuais = verificarOAlvo(escolha, dadosAtuais);// vai verificar se a localização já
-                                                                                 // foi usada
+        try {
+            if (Integer.parseInt(escolha.coluna)>0&&Integer.parseInt(escolha.coluna)<11&&Integer.parseInt(escolha.linha)>0&&Integer.parseInt(escolha.linha)<11 ) {
+                dadosAtuais = verificarOAlvo(escolha, dadosAtuais);// vai verificar se a localização já escolhida
+            }else{
+                System.out.println("Coordenadas invalidas, tente novamente");
+            }
+            
+           
+        } catch (Exception e) {
+            System.out.println("Coordenadas invalidas, tente novamente");
+            //TODO: handle exception
+        }
+                                                                                
         return dadosAtuais;
     }
 
@@ -70,7 +81,28 @@ public class Acoes {
                         dadosAtuais.vetorDeVidas[dadosAtuais.mapa[linha][coluna].posVetorVida]--;
                         switch (dadosAtuais.mapa[linha][coluna].letra) {
                             case "D":
+                            if (dadosAtuais.vetorDeVidas[dadosAtuais.mapa[linha][coluna].posVetorVida]==0) {
+                                waifu.falarAfundouDD();
+                            } else {
                                 waifu.falarAcertouDD();
+                            }
+                                break;
+                            case "S":
+                            waifu.falarAcertouSubmarino();
+                                break;
+                            case "P":
+                            if (dadosAtuais.vetorDeVidas[dadosAtuais.mapa[linha][coluna].posVetorVida]==0) {
+                                waifu.falarAfundouPPPP();
+                            } else {
+                                waifu.falarAcertouPPPP();
+                            }
+                                break;
+                            case "C":
+                            if (dadosAtuais.vetorDeVidas[dadosAtuais.mapa[linha][coluna].posVetorVida]==0) {
+                                //waifu.falarAfundouCCCC();
+                            } else {
+                                waifu.falarAcertouCCCC();
+                            }
                                 break;
                         
                             default:

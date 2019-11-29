@@ -13,6 +13,7 @@ import java.io.PrintWriter;
  */
 
 public class Escritor {
+    public Waifu waifu = new Waifu();
     public List<InformacaoVO> listaDeInformação = new ArrayList<InformacaoVO>();
     public Util util = new Util();
     public List<InformacaoVO> lerTxtMapa() {// colocar para receber uma string que vai vir do args
@@ -86,7 +87,15 @@ public class Escritor {
             arquivo.println("Você fez "+totalDeTiros+" tiros no total");
             arquivo.println("Onde "+((tirosAcertados/totalDeTiros)*100)+"% acertaram uma embarcação");
             arquivo.println("Infelizmente "+((tirosNaAgua/totalDeTiros)*100)+"% foram errados");
+
             //INSIRA AQUI A FALA COM O IF DEPENDENTO DA PORCENTAGEM 
+
+            if (((tirosAcertados/totalDeTiros)*100)>70) {
+                waifu.falarAcertouMuito();
+            }else{waifu.falarErrouDeMais();}
+            System.out.println("\n");
+            // colocar sobre os navios
+            waifu.falarObrigadoPorJogar();
         } catch (Exception e) {
             System.out.println(e);
         } finally {
