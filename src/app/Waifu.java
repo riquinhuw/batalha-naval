@@ -39,7 +39,7 @@ public class Waifu {
         random = Math.random();
         random *= 10;
         random = Math.round(random);
-        System.out.println(random);
+        //System.out.println(random);
         if (random < 4) {
             System.out.println(ANSI_CYAN + "I-19: Poxa Almirante, você acertou na água" + ANSI_RESET);
         } else {
@@ -60,7 +60,7 @@ public class Waifu {
         random = Math.random();
         random *= 10;
         random = Math.round(random);
-        System.out.println(random);
+        //System.out.println(random);
         if (random < 5) {
             System.out.println(ANSI_BLUE + "Yahagi: Boa Almirante" + ANSI_RESET);
         } else {
@@ -76,7 +76,7 @@ public class Waifu {
         random = Math.random();
         random *= 10;
         random = Math.round(random);
-        System.out.println(random);
+        //System.out.println(random);
         if (random < 4) {
             System.out.println(ANSI_GREEN + "Zuikako: Parem de se esconder e me enfrentem!" + ANSI_RESET);
         } else {
@@ -98,7 +98,7 @@ public class Waifu {
         random = Math.random();
         random *= 10;
         random = Math.round(random);
-        System.out.println(random);
+        //System.out.println(random);
         if (random < 5) {
             System.out.println(ANSI_YELLOW + "Hatsuzuki: Parabéns Almirante" + ANSI_RESET);
         } else {

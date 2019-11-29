@@ -91,9 +91,9 @@ public class TelaRefresh {
                         } else {
                             // se não foi atingido ainda, vai ficar escondido, tem que trocar matriz letra por " " para esconder os barcos
                             if (j == 10) {
-                                System.out.println(ANSI_BLUE_BACKGROUND + ANSI_BLACK + matriz[i][j].letra + ANSI_RESET);
+                                System.out.println(ANSI_BLUE_BACKGROUND + ANSI_BLACK + " " + ANSI_RESET);
                             } else {
-                                System.out.print(ANSI_BLUE_BACKGROUND + ANSI_BLACK + matriz[i][j].letra + ANSI_RESET);
+                                System.out.print(ANSI_BLUE_BACKGROUND + ANSI_BLACK +" " + ANSI_RESET);
                             }
 
                         }
