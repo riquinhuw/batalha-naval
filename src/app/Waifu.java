@@ -119,7 +119,7 @@ public class Waifu {
 
     public void falarAfundouDD() {
         System.out.println(
-                ANSI_CYAN + "Almirante nos Conseguimos esse destroyer nao ira mais nos incomodar" + ANSI_RESET);
+                ANSI_CYAN + "I-19: Almirante nos Conseguimos esse destroyer nao ira mais nos incomodar" + ANSI_RESET);
     }
 
     public void falarErrouDeMais() {
@@ -139,6 +139,11 @@ public class Waifu {
 
     }
 
+    //Graças aos seus esforços conseguimos derrotalas almirante?
+    public void falarAfundouCCCC(){
+        System.out.println(ANSI_YELLOW + "Hatsuzuki: Parabéns Almirante" + ANSI_RESET);
+    }
+
     public void intro() {
 
         String barra = "\\";
@@ -156,7 +161,7 @@ public class Waifu {
         System.out.println(" " + barra + "   o * o * * o o  /");
         System.out.println(ANSI_BLUE_BACKGROUND + "~~~~~~~~~~~~~~~~~~~~~~~~" + ANSI_RESET);
 
-        for (int i = 0; i < 13; i++) {
+        for (int i = 0; i < 14; i++) {
             System.out.print("\033[H\033[2J");  // limpa tela
             System.out.flush(); //limpa tb
 
@@ -200,7 +205,8 @@ public class Waifu {
     }
 
     
-
+    //obrigado por ler até aqui :)
+    //CCRV COMPANY AGRADECE A SUA VISITA 
     public Waifu() {
     }
     

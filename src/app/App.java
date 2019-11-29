@@ -48,15 +48,14 @@ public static Util util = new Util();
             //System.out.print("\033[H\033[2J");  // limpa tela ta bugado
             //System.out.flush(); //limpa tb
             //System.out.print("\033\143");
-            
-            gameplay();
+            gameplay();// ok né
             listaDeTiros= dadosAtuais.listaDeTiros;
             mapa = dadosAtuais.mapa; // tem 2 locais que atualizam o mapa, ver se vai dar conflito
             vetorDeVidas = dadosAtuais.vetorDeVidas;
             int verificarVetorDeVidas=0;
             for (int i = 0; i < vetorDeVidas.length; i++) {
                 if (vetorDeVidas[i] != 0) {
-                    System.out.println(vetorDeVidas[i]);
+                    //System.out.println(vetorDeVidas[i]);
                     verificarVetorDeVidas++; // se tiver algum vetor com vida ele vai dar ++
                 }
             }

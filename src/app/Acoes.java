@@ -43,7 +43,7 @@ public class Acoes {
         boolean taNaLista = false;
         for (int i = 0; i < dadosAtuais.listaDeTiros.size(); i++) {
             if (dadosAtuais.listaDeTiros.get(i).coluna == escolha.coluna && dadosAtuais.listaDeTiros.get(i).linha == escolha.linha) {
-                System.out.println("ta na lista de tiro");
+                //System.out.println("ta na lista de tiro");
                 taNaLista=true;
                 //return dadosAtuais;// se tiver na lista ele já retorna a lista sem mudar nada.
             } else {// se não tiver ele deixa false
@@ -76,7 +76,7 @@ public class Acoes {
                                                                         // pula
                 if (dadosAtuais.vetorDeVidas[dadosAtuais.mapa[linha][coluna].posVetorVida]>0 && dadosAtuais.mapa[linha][coluna].atingido==false ) {//SE o barco tiver "vida" ele atira
                 // E TB se o local não for atingido já
-                    if (Integer.parseInt(escolha.linha) == linha && Integer.parseInt(escolha.coluna) == coluna) {
+                    if (Integer.parseInt(escolha.linha) == linha && Integer.parseInt(escolha.coluna) == coluna) {//????????????
                         dadosAtuais.mapa[linha][coluna].atingido = true;
                         dadosAtuais.vetorDeVidas[dadosAtuais.mapa[linha][coluna].posVetorVida]--;
                         switch (dadosAtuais.mapa[linha][coluna].letra) {
@@ -99,7 +99,7 @@ public class Acoes {
                                 break;
                             case "C":
                             if (dadosAtuais.vetorDeVidas[dadosAtuais.mapa[linha][coluna].posVetorVida]==0) {
-                                //waifu.falarAfundouCCCC();
+                                waifu.falarAfundouCCCC();
                             } else {
                                 waifu.falarAcertouCCCC();
                             }
@@ -111,7 +111,8 @@ public class Acoes {
                     }
                 }else{
                     //fala kawaii aqui
-                    System.out.println("Você Já atirou aqui Almirante");
+                    //System.out.println("Você Já atirou aqui Almirante");
+                    waifu.falarAcertouRepetido();
                 }
                 
     

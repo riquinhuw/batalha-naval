@@ -4,7 +4,7 @@ package app;
  * InformacaoVO
  */
 public class InformacaoVO {
-
+    //Guarda informações do documento TXT, na hora de transcrever para o Jogo
     public int linha;
     public int coluna;
     public String letra;
